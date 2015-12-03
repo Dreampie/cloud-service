@@ -2,15 +2,17 @@ subprojects {
   buildscript {
     ext {
       springDependencyManagementVersion = "0.5.3.RELEASE"
-      springBootVersion = "1.3.0.RELEASE"
+      springBootPluginVersion = "1.2.7.RELEASE"
+      springCloudStarterVersion = "1.0.2.RELEASE"
     }
+
     repositories {
       mavenCentral()
     }
 
     dependencies {
       classpath("io.spring.gradle:dependency-management-plugin:${springDependencyManagementVersion}")
-      classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+      classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootPluginVersion}")
     }
   }
 

@@ -1,8 +1,5 @@
 apply plugin: "spring-boot"
-
-ext {
-  springCloudStarterVersion = "1.0.2.RELEASE"
-}
+apply plugin: "io.spring.dependency-management"
 
 dependencyManagement {
   imports {
