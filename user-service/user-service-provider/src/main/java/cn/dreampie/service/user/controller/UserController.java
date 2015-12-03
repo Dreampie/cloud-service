@@ -1,4 +1,4 @@
-package cn.dreampie.service.user.provider;
+package cn.dreampie.service.user.controller;
 
 import cn.dreampie.service.user.UserService;
 import cn.dreampie.service.user.entity.UserEntity;
@@ -14,24 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by Dreampie on 15/11/22.
  */
-@RefreshScope
 @RestController
-@RequestMapping("/users")
-public class UserProvider implements UserService {
-
-  @Value("${endpoints.health.sensitive}")
-  private boolean sensitive;
+public class UserController implements UserService {
 
   @Autowired
   private UserRepository userRepository;
 
-  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   public UserEntity getById(@PathVariable String id) {
     return userRepository.findById(id);
   }
 
-  @RequestMapping(value = "/t")
-  public boolean getSensitive() {
-    return sensitive;
-  }
 }
