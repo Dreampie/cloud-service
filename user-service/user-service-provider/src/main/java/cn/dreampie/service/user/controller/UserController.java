@@ -5,7 +5,7 @@ import cn.dreampie.service.user.entity.UserEntity;
 import cn.dreampie.service.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -21,7 +21,11 @@ public class UserController implements UserService {
     return userRepository.findById(id);
   }
 
-  public UserEntity save(@RequestParam UserEntity user) {
+  public void deleteById(@PathVariable String id) {
+    userRepository.delete(id);
+  }
+
+  public UserEntity save(@RequestBody UserEntity user) {
     return userRepository.save(user);
   }
 }
