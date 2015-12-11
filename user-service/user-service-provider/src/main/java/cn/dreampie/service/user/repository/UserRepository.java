@@ -8,6 +8,4 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface UserRepository extends MongoRepository<UserEntity, String> {
   UserEntity findById(String id);
-
-  UserEntity save(UserEntity user);
 }
