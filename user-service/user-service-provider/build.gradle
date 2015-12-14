@@ -10,9 +10,14 @@ dependencyManagement {
 
 dependencies {
   compile(project(":user-service:user-service-definer"))
-  compile("org.springframework.boot:spring-boot-starter-data-mongodb")
-  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-web") {
+    exclude module: "spring-boot-starter-tomcat"
+  }
+  compile("org.springframework.boot:spring-boot-starter-undertow")
   compile("org.springframework.boot:spring-boot-starter-actuator")
+  compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+  compile("org.springframework.cloud:spring-cloud-starter-hystrix")
+  compile("org.springframework.cloud:spring-cloud-netflix-hystrix-amqp")
   compile("org.springframework.cloud:spring-cloud-starter-config")
   compile("org.springframework.cloud:spring-cloud-starter-eureka")
   compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")

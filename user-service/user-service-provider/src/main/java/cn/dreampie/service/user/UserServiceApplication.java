@@ -3,6 +3,7 @@ package cn.dreampie.service.user;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
@@ -12,6 +13,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableDiscoveryClient
 @EnableMongoRepositories
 @SpringBootApplication
+@EnableHystrix
 @ComponentScan(basePackages = {"cn.dreampie.service"})
 public class UserServiceApplication {
 
