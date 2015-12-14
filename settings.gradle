@@ -1,2 +1,2 @@
 rootProject.name = 'cloud-service'
-include 'user-service:user-service-definer', 'user-service:user-service-provider', 'video-service:video-service-definer', 'video-service:video-service-provider'
+include 'user-service:user-service-definer', 'user-service:user-service-provider'
