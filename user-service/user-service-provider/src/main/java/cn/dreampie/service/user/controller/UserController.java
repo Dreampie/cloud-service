@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by Dreampie on 15/11/22.
  */
@@ -16,6 +18,10 @@ public class UserController implements UserService {
 
   @Autowired
   private UserRepository userRepository;
+
+  public List<UserEntity> findAll() {
+    return userRepository.findAll();
+  }
 
   public UserEntity findById(@PathVariable String id) {
     return userRepository.findById(id);
